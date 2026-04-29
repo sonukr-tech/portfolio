@@ -1,0 +1,41 @@
+.section { padding: 6rem 3rem; max-width: 960px; margin: 0 auto; }
+
+.tag { color: var(--accent); font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; }
+.title {
+  font-family: var(--font-head); font-size: clamp(2rem,5vw,3rem);
+  font-weight: 800; letter-spacing: -1.5px; margin: 0.5rem 0 0.75rem; line-height: 1.1;
+}
+.divider {
+  width: 48px; height: 3px; border-radius: 2px; margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.sub { color: var(--muted); font-size: 0.97rem; margin-bottom: 2.5rem; }
+
+.group { margin-bottom: 2rem; }
+.groupLabel {
+  font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1rem; font-weight: 500;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.5rem 1rem;
+  font-size: 0.87rem; color: var(--text);
+  transition: all 0.22s; cursor: default;
+}
+.chip:hover {
+  border-color: var(--accent); color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,245,160,0.07);
+}
+.chipIcon { font-size: 0.95rem; }
+
+.inner { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+:global(.reveal-block.revealed) { opacity: 1 !important; transform: none !important; }
+
+@media (max-width: 768px) {
+  .section { padding: 5rem 1.5rem; }
+}

@@ -1,0 +1,111 @@
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 8rem 3rem 4rem;
+  position: relative; overflow: hidden;
+}
+
+.glow1, .glow2 {
+  position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+}
+.glow1 {
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0,245,160,0.06) 0%, transparent 65%);
+  top: -200px; left: -150px;
+}
+.glow2 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,200,255,0.05) 0%, transparent 65%);
+  bottom: -150px; right: -100px;
+}
+
+.content { position: relative; z-index: 1; max-width: 680px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,245,160,0.08); border: 1px solid rgba(0,245,160,0.25);
+  color: var(--accent); font-size: 0.78rem; letter-spacing: 2px;
+  padding: 0.4rem 1rem; border-radius: 100px; text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  animation: fadeDown 0.8s ease both;
+}
+
+.hello {
+  color: var(--muted); font-size: 1.1rem; margin-bottom: 0.4rem;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+
+.name {
+  font-family: var(--font-head);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800; line-height: 1.02; letter-spacing: -3px;
+  margin-bottom: 1.2rem;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.gradient {
+  background: linear-gradient(135deg, var(--accent) 30%, var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.role {
+  font-size: 1.05rem; color: var(--muted);
+  margin-bottom: 1rem; letter-spacing: 0.2px;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.desc {
+  color: var(--muted); font-size: 0.96rem;
+  max-width: 500px; line-height: 1.85; margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s 0.4s ease both;
+}
+
+.cta {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.5s ease both;
+}
+
+.btnPrimary, .btnOutline {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.78rem 1.9rem; border-radius: 8px;
+  font-size: 0.92rem; font-weight: 500; transition: all 0.25s;
+  border: none;
+}
+.btnPrimary {
+  background: var(--accent); color: #0b0d12;
+}
+.btnPrimary:hover { background: #00dba0; transform: translateY(-2px); }
+
+.btnOutline {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--border);
+}
+.btnOutline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+.scrollHint {
+  display: flex; align-items: center; gap: 0.8rem;
+  color: var(--muted); font-size: 0.75rem; letter-spacing: 2px;
+  margin-top: 4rem;
+  animation: fadeUp 0.8s 0.7s ease both;
+}
+.scrollLine {
+  width: 44px; height: 1px; background: var(--muted);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse { 0%,100%{opacity:0.25} 50%{opacity:1} }
+
+@media (max-width: 768px) {
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .name { letter-spacing: -1.5px; }
+  .cta { flex-direction: column; }
+  .btnPrimary, .btnOutline { width: 100%; justify-content: center; }
+}
